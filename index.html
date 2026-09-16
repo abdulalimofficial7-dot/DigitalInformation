@@ -122,36 +122,38 @@ color:var(--text);
 border-radius:12px
 }
 
-/* Custom Google Translate Globe Wrapper */
-.langBox {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  border: 1px solid var(--line);
-  background: var(--card);
-  border-radius: 12px;
-  padding: 0 10px;
-  height: 40px;
+/* Google Translate Styles with 🌐 Icon */
+.translateContainer {
+display: flex;
+align-items: center;
+gap: 6px;
+border: 1px solid var(--line);
+background: var(--card);
+border-radius: 12px;
+padding: 0 10px;
+height: 40px;
 }
-.langIcon {
-  font-size: 18px;
-  line-height: 1;
-  display: flex;
-  align-items: center;
+
+.translateContainer .langIcon {
+font-size: 16px;
+line-height: 1;
+user-select: none;
 }
+
 #google_translate_element select {
-  border: none !important;
-  background: transparent !important;
-  color: var(--text) !important;
-  padding: 0 !important;
-  height: 38px;
-  font-family: inherit;
-  outline: none;
-  font-weight: 600;
-  cursor: pointer;
+border: 0 !important;
+background: transparent !important;
+color: var(--text);
+height: 38px;
+font-family: inherit;
+outline: none;
+font-weight: 600;
+cursor: pointer;
+padding: 0;
 }
+
 .goog-te-banner-frame, .goog-logo-link, .goog-te-gadget span, .goog-te-gadget img { display: none !important; }
-.goog-te-gadget { color: transparent !important; font-size: 0px; }
+.goog-te-gadget { color: transparent !important; font-size: 0px !important; }
 body { top: 0px !important; }
 .skiptranslate iframe { display: none !important; }
 
@@ -332,7 +334,7 @@ white-space:nowrap;
 background:#051b2c;
 }
 
-/* Homepage: compact single-line search. */
+/* Homepage: compact single-line search */
 .homeHeroSearchBox{
 flex-direction:row;
 align-items:center;
@@ -598,8 +600,7 @@ height:38px;
 border:1px solid var(--line);
 background:var(--card);
 color:var(--text);
-border-radius:10px;
-transition: background 0.2s ease, color 0.2s ease;
+border-radius:10px
 }
 
 .page.active{
@@ -1039,9 +1040,9 @@ font-size:19px
 </a>
 
 <div class="navActions">
-<div class="langBox">
-  <span class="langIcon" title="ভাষা পরিবর্তন">🌐</span>
-  <div id="google_translate_element"></div>
+<div class="translateContainer">
+<span class="langIcon" aria-hidden="true">🌐</span>
+<div id="google_translate_element"></div>
 </div>
 <button class="icon" onclick="toggleTheme()" title="ডার্ক মোড">◐</button>
 </div>
@@ -1158,7 +1159,7 @@ font-size:19px
 </div>
 </section>
 
-<section id="allSectionAnchor" class="section">
+<section class="section">
 <div class="sectionHead">
 <h2>সব পত্রিকা</h2>
 <small id="lastUpdated"></small>
@@ -1167,6 +1168,14 @@ font-size:19px
 <div class="loading">তথ্য লোড হচ্ছে...</div>
 </div>
 <div id="allPagination" class="pagination"></div>
+</section>
+
+<section id="searchView" class="section" style="display:none">
+<div class="sectionHead">
+<h2>অনুসন্ধানের ফলাফল</h2>
+<button class="btn secondary" onclick="goHome()">ফিরে যান</button>
+</div>
+<div id="searchGrid" class="grid" style="margin-top:14px"></div>
 </section>
 
 <div class="cta">
@@ -1205,15 +1214,6 @@ font-size:19px
 <p style="margin-top:24px">© <span id="year"></span> পত্রিকা সমাহার</p>
 </footer>
 
-</section>
-
-<!-- SEARCH RESULT VIEW -->
-<section id="searchView" class="section" style="display:none">
-<div class="sectionHead">
-<h2>অনুসন্ধানের ফলাফল</h2>
-<button class="btn secondary" onclick="goHome()">ফিরে যান</button>
-</div>
-<div id="searchGrid" class="grid" style="margin-top:14px"></div>
 </section>
 
 <!-- ALL VIEW WITH FULL FILTER & SEARCH -->
@@ -1563,9 +1563,9 @@ return;
 
 const term = input.value.trim();
 
-const freq = $("heroFrequency").value;
-const cat = $("heroCategory").value;
-const div = $("heroDivision").value;
+const freq = $("heroFrequency") ? $("heroFrequency").value : "";
+const cat = $("heroCategory") ? $("heroCategory").value : "";
+const div = $("heroDivision") ? $("heroDivision").value : "";
 
 const results = allNewspapers.filter(function(item){
 
@@ -1576,6 +1576,16 @@ valueMatches(item, "division", div);
 
 });
 
+let headingText = "";
+if(term){
+  headingText = `"${esc(term)}" — ${results.length}টি পত্রিকা`;
+} else if(freq || cat || div){
+  const filters = [freq, cat, div].filter(Boolean).join(", ");
+  headingText = `"${esc(filters)}" — ${results.length}টি পত্রিকা`;
+} else {
+  headingText = `সব অনুসন্ধানের ফলাফল — ${results.length}টি পত্রিকা`;
+}
+
 $("searchGrid").innerHTML =
 `
 <div style="grid-column:1/-1" class="inlineFolder">
@@ -1583,7 +1593,7 @@ $("searchGrid").innerHTML =
 <div class="inlineFolderHead">
 
 <h3>
-অনুসন্ধানের ফলাফল — ${results.length}টি পত্রিকা
+${headingText}
 </h3>
 
 <button
@@ -1613,6 +1623,11 @@ $("homeView").style.display = "none";
 $("allView").style.display = "none";
 $("aboutView").style.display = "none";
 $("searchView").style.display = "block";
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
 }
 
 function runAllViewSearch(){
@@ -1794,7 +1809,7 @@ items
 );
 }
 
-/* Pagination handler */
+/* Pagination handler with Smooth Transition */
 
 function renderPaged(
 gridId,
@@ -1879,9 +1894,14 @@ source,
 page
 );
 
-const anchor = gridId === "allGrid" ? $("allSectionAnchor") : $(gridId);
-if(anchor){
-  anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
+const targetEl = $(gridId);
+if(targetEl){
+  const yOffset = -80;
+  const y = targetEl.getBoundingClientRect().top + window.pageYOffset + yOffset;
+  window.scrollTo({
+    top: Math.max(0, y),
+    behavior: "smooth"
+  });
 }
 }
 
