@@ -43,6 +43,7 @@ body.dark{
 }
 
 button,input,select{font:inherit}
+
 button{cursor:pointer}
 
 a{
@@ -109,7 +110,7 @@ font-size:24px;
 margin-left:auto;
 display:flex;
 gap:7px;
-align-items:center;
+align-items: center;
 }
 
 .icon{
@@ -121,78 +122,38 @@ color:var(--text);
 border-radius:12px
 }
 
-/* Google Translate */
-#google_translate_element select{
-border:1px solid var(--line);
-background:var(--card);
-color:var(--text);
-border-radius:12px;
-padding:8px;
-height:40px;
-font-family:inherit;
-outline:none;
-font-weight:600;
+/* Custom Google Translate Globe Wrapper */
+.langBox {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  border-radius: 12px;
+  padding: 0 10px;
+  height: 40px;
 }
-
-.goog-te-banner-frame,
-.goog-logo-link,
-.goog-te-gadget span,
-.goog-te-gadget-simple img,
-.goog-te-gadget-icon{
-display:none!important;
+.langIcon {
+  font-size: 18px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
 }
-
-.goog-te-gadget{
-color:transparent!important;
-font-size:0px;
+#google_translate_element select {
+  border: none !important;
+  background: transparent !important;
+  color: var(--text) !important;
+  padding: 0 !important;
+  height: 38px;
+  font-family: inherit;
+  outline: none;
+  font-weight: 600;
+  cursor: pointer;
 }
-
-#google_translate_element{
-position:relative;
-display:flex;
-align-items:center;
-min-width:72px;
-}
-
-#google_translate_element:before{
-content:"文A";
-display:inline-flex;
-align-items:center;
-justify-content:center;
-height:38px;
-min-width:38px;
-margin-right:4px;
-border:1px solid var(--line);
-border-radius:10px;
-background:var(--card);
-color:var(--text);
-font-size:14px;
-font-weight:800;
-line-height:1;
-}
-
-#google_translate_element .goog-te-gadget-simple{
-border:1px solid var(--line)!important;
-border-radius:10px!important;
-background:var(--card)!important;
-padding:0 6px!important;
-height:38px!important;
-display:flex!important;
-align-items:center!important;
-box-sizing:border-box!important;
-}
-
-#google_translate_element .goog-te-menu-value span{
-color:var(--text)!important;
-}
-
-body{
-top:0!important;
-}
-
-.skiptranslate iframe{
-display:none!important;
-}
+.goog-te-banner-frame, .goog-logo-link, .goog-te-gadget span, .goog-te-gadget img { display: none !important; }
+.goog-te-gadget { color: transparent !important; font-size: 0px; }
+body { top: 0px !important; }
+.skiptranslate iframe { display: none !important; }
 
 .drawer{
 position:fixed;
@@ -285,6 +246,7 @@ margin:auto;
 padding:18px 14px 100px
 }
 
+/* Hero Section Refined */
 .hero{
 background:linear-gradient(135deg,#082c46,#087f72 70%,#16a085);
 color:#fff;
@@ -305,6 +267,7 @@ opacity:.94;
 line-height:1.75
 }
 
+/* Integrated Professional Search Box */
 .heroSearchBox{
 background:rgba(255,255,255,0.15);
 backdrop-filter:blur(16px);
@@ -337,7 +300,7 @@ font-size:15px;
 
 .heroFilterGrid{
 display:grid;
-grid-template-columns:repeat(3,1fr) auto;
+grid-template-columns:repeat(3, 1fr) auto;
 gap:8px;
 }
 
@@ -361,7 +324,7 @@ background:#082c46;
 color:#fff;
 font-weight:800;
 font-size:15px;
-transition:background .2s ease;
+transition:background 0.2s ease;
 white-space:nowrap;
 }
 
@@ -369,6 +332,7 @@ white-space:nowrap;
 background:#051b2c;
 }
 
+/* Homepage: compact single-line search. */
 .homeHeroSearchBox{
 flex-direction:row;
 align-items:center;
@@ -435,7 +399,7 @@ background:var(--card);
 color:var(--text);
 border-radius:999px;
 padding:9px 16px;
-transition:all .2s ease;
+transition:all 0.2s ease;
 }
 
 .chip.active,
@@ -458,7 +422,7 @@ border-radius:14px;
 padding:13px;
 text-align:center;
 font-weight:750;
-transition:all .2s ease;
+transition:all 0.2s ease;
 }
 
 .division:hover{
@@ -474,6 +438,7 @@ font-weight:500;
 margin-top:2px
 }
 
+/* Inline Accordion / Folder Section */
 .inlineFolder{
 margin-top:14px;
 background:var(--card);
@@ -481,7 +446,7 @@ border:1px solid var(--line);
 border-radius:18px;
 padding:16px;
 box-shadow:var(--shadow);
-animation:fadeIn .25s ease-in-out;
+animation:fadeIn 0.25s ease-in-out;
 }
 
 .inlineFolderHead{
@@ -510,8 +475,8 @@ font-weight:700;
 }
 
 @keyframes fadeIn{
-from{opacity:0;transform:translateY(-6px);}
-to{opacity:1;transform:translateY(0);}
+from{opacity:0; transform:translateY(-6px);}
+to{opacity:1; transform:translateY(0);}
 }
 
 .grid{
@@ -633,7 +598,8 @@ height:38px;
 border:1px solid var(--line);
 background:var(--card);
 color:var(--text);
-border-radius:10px
+border-radius:10px;
+transition: background 0.2s ease, color 0.2s ease;
 }
 
 .page.active{
@@ -998,7 +964,7 @@ grid-template-columns:1fr 1fr;
 }
 
 .heroSearchBtn{
-grid-column:1/-1;
+grid-column:1 / -1;
 padding:12px;
 }
 }
@@ -1065,7 +1031,6 @@ font-size:19px
 
 <header class="header">
 <div class="nav">
-
 <button class="icon" aria-label="menu" onclick="openDrawer()">☰</button>
 
 <a class="brand" href="#" onclick="goHome();return false">
@@ -1074,12 +1039,15 @@ font-size:19px
 </a>
 
 <div class="navActions">
-<div id="google_translate_element"></div>
+<div class="langBox">
+  <span class="langIcon" title="ভাষা পরিবর্তন">🌐</span>
+  <div id="google_translate_element"></div>
+</div>
 <button class="icon" onclick="toggleTheme()" title="ডার্ক মোড">◐</button>
 </div>
-
 </div>
 </header>
+
 
 <div class="notice">
 <div class="noticeInner">
@@ -1088,1084 +1056,482 @@ font-size:19px
 </div>
 </div>
 
+
 <div id="drawer" class="drawer">
-
 <div class="drawerShade" onclick="closeDrawer()"></div>
-
 <aside class="drawerPanel">
-
 <div class="drawerTop">
 <h3>মেনু</h3>
 <button class="icon" onclick="closeDrawer()" aria-label="বন্ধ করুন">×</button>
 </div>
 
 <button class="menuItem" onclick="goHome();closeDrawer()">⌂ হোম</button>
-
 <button class="menuItem" onclick="showAll();closeDrawer()">▦ সব পত্রিকা</button>
-
 <button class="menuItem" onclick="focusSearch();closeDrawer()">⌕ অনুসন্ধান</button>
-
 <button class="menuItem" onclick="showAbout();closeDrawer()">ⓘ ডিরেক্টরি সম্পর্কে</button>
-
-<a class="menuItem"
-href="https://forms.gle/378WKzkQqqkqBRjt5"
-target="_blank"
-rel="noopener noreferrer">
-＋ পত্রিকা যোগ করুন
-</a>
-
+<a class="menuItem" href="https://forms.gle/378WKzkQqqkqBRjt5" target="_blank" rel="noopener noreferrer">＋ পত্রিকা যোগ করুন</a>
 </aside>
 </div>
+
 
 <main>
 
 <section id="homeView">
 
+<!-- HERO BANNER WITH INTEGRATED FILTER SEARCH -->
 <div class="hero">
-
 <h1>বাংলাদেশের সংবাদপত্র</h1>
-
-<p>
-দেশের বিভিন্ন ধরনের সংবাদপত্র ও সাময়িকীর তথ্য সহজে খুঁজে দেখুন।
-</p>
+<p>দেশের বিভিন্ন ধরনের সংবাদপত্র ও সাময়িকীর তথ্য সহজে খুঁজে দেখুন।</p>
 
 <div class="heroSearchBox homeHeroSearchBox">
-
-<div class="heroSearchInputGroup">
-
-<input
-id="heroSearch"
-type="search"
-placeholder="পত্রিকার নাম, জেলা, বিভাগ বা ট্যাগ লিখুন..."
->
-
-</div>
-
-<div class="heroFilterGrid">
-
-<select id="heroFrequency">
-<option value="">সব প্রকাশনা</option>
-</select>
-
-<select id="heroCategory">
-<option value="">সব ক্যাটাগরি</option>
-</select>
-
-<select id="heroDivision">
-<option value="">সব বিভাগ</option>
-</select>
-
-<button
-type="button"
-class="heroSearchBtn"
-aria-label="সার্চ"
-title="সার্চ"
-onclick="runIntegratedSearch()">
-⌕
-</button>
-
-</div>
-
+  <div class="heroSearchInputGroup">
+    <input id="heroSearch" type="search" placeholder="পত্রিকার নাম, জেলা, বিভাগ বা ট্যাগ লিখুন...">
+  </div>
+  <div class="heroFilterGrid">
+    <select id="heroFrequency">
+      <option value="">সব প্রকাশনা</option>
+    </select>
+    <select id="heroCategory">
+      <option value="">সব ক্যাটাগরি</option>
+    </select>
+    <select id="heroDivision">
+      <option value="">সব বিভাগ</option>
+    </select>
+    <button class="heroSearchBtn" aria-label="সার্চ" title="সার্চ" onclick="runIntegratedSearch()">⌕</button>
+  </div>
 </div>
 </div>
 
+<!-- SECTION: PUBLICATION TYPES (INLINE DROPDOWN VIEW) -->
 <section class="section">
-
 <div class="sectionHead">
 <h2>প্রকাশনার ধরন</h2>
 </div>
-
 <div id="frequencyChips" class="scroll"></div>
-
-<div id="frequencyFolder"
-class="inlineFolder"
-style="display:none">
-
-<div class="inlineFolderHead">
-
-<h3 id="frequencyFolderTitle">
-প্রকাশনা অনুযায়ী পত্রিকা
-</h3>
-
-<button
-class="inlineFolderClose"
-onclick="closeFolder('frequencyFolder')">
-বন্ধ করুন ✕
-</button>
-
+<div id="frequencyFolder" class="inlineFolder" style="display:none">
+  <div class="inlineFolderHead">
+    <h3 id="frequencyFolderTitle">প্রকাশনা অনুযায়ী পত্রিকা</h3>
+    <button class="inlineFolderClose" onclick="closeFolder('frequencyFolder')">বন্ধ করুন ✕</button>
+  </div>
+  <div id="frequencyGrid" class="grid"></div>
 </div>
-
-<div id="frequencyGrid" class="grid"></div>
-
-</div>
-
 </section>
 
+<!-- SECTION: CATEGORIES (INLINE DROPDOWN VIEW) -->
 <section class="section">
-
 <div class="sectionHead">
 <h2>ক্যাটাগরি</h2>
 </div>
-
 <div id="categoryChips" class="scroll"></div>
-
-<div id="categoryFolder"
-class="inlineFolder"
-style="display:none">
-
-<div class="inlineFolderHead">
-
-<h3 id="categoryFolderTitle">
-ক্যাটাগরি অনুযায়ী পত্রিকা
-</h3>
-
-<button
-class="inlineFolderClose"
-onclick="closeFolder('categoryFolder')">
-বন্ধ করুন ✕
-</button>
-
+<div id="categoryFolder" class="inlineFolder" style="display:none">
+  <div class="inlineFolderHead">
+    <h3 id="categoryFolderTitle">ক্যাটাগরি অনুযায়ী পত্রিকা</h3>
+    <button class="inlineFolderClose" onclick="closeFolder('categoryFolder')">বন্ধ করুন ✕</button>
+  </div>
+  <div id="categoryGrid" class="grid"></div>
 </div>
-
-<div id="categoryGrid" class="grid"></div>
-
-</div>
-
 </section>
 
+<!-- SECTION: DIVISIONS (INLINE DROPDOWN VIEW) -->
 <section class="section">
-
 <div class="sectionHead">
 <h2>বিভাগ অনুযায়ী</h2>
 </div>
-
 <div id="divisionGrid" class="divisionGrid">
-
-<div class="loading">
-তথ্য লোড হচ্ছে...
+<div class="loading">তথ্য লোড হচ্ছে...</div>
 </div>
-
+<div id="divisionFolder" class="inlineFolder" style="display:none">
+  <div class="inlineFolderHead">
+    <h3 id="divisionFolderTitle">বিভাগ অনুযায়ী পত্রিকা</h3>
+    <button class="inlineFolderClose" onclick="closeFolder('divisionFolder')">বন্ধ করুন ✕</button>
+  </div>
+  <div id="divisionFolderGrid" class="grid"></div>
 </div>
-
-<div id="divisionFolder"
-class="inlineFolder"
-style="display:none">
-
-<div class="inlineFolderHead">
-
-<h3 id="divisionFolderTitle">
-বিভাগ অনুযায়ী পত্রিকা
-</h3>
-
-<button
-class="inlineFolderClose"
-onclick="closeFolder('divisionFolder')">
-বন্ধ করুন ✕
-</button>
-
-</div>
-
-<div id="divisionFolderGrid" class="grid"></div>
-
-</div>
-
 </section>
 
 <section class="section">
-
 <div class="sectionHead">
 <h2>জনপ্রিয় পত্রিকা</h2>
 </div>
-
 <div id="popularGrid" class="grid">
-
-<div class="loading">
-তথ্য লোড হচ্ছে...
+<div class="loading">তথ্য লোড হচ্ছে...</div>
 </div>
-
-</div>
-
 </section>
 
-<section class="section">
-
+<section id="allSectionAnchor" class="section">
 <div class="sectionHead">
-
 <h2>সব পত্রিকা</h2>
-
 <small id="lastUpdated"></small>
-
 </div>
-
-<div
-id="allGrid"
-class="grid"
-style="margin-top:14px">
-
-<div class="loading">
-তথ্য লোড হচ্ছে...
+<div id="allGrid" class="grid" style="margin-top:14px">
+<div class="loading">তথ্য লোড হচ্ছে...</div>
 </div>
-
-</div>
-
-<div
-id="allPagination"
-class="pagination">
-</div>
-
-</section>
-
-<section
-id="searchView"
-class="section"
-style="display:none">
-
-<div class="sectionHead">
-
-<h2>অনুসন্ধানের ফলাফল</h2>
-
-<button
-class="btn secondary"
-onclick="closeHomeSearch()">
-ফিরে যান
-</button>
-
-</div>
-
-<div
-id="searchGrid"
-class="grid"
-style="margin-top:14px">
-</div>
-
+<div id="allPagination" class="pagination"></div>
 </section>
 
 <div class="cta">
-
 <h2>আপনার পত্রিকা যুক্ত করুন</h2>
-
-<p>
-তালিকায় কোনো পত্রিকা না থাকলে তথ্য পাঠাতে পারেন।
-</p>
-
-<a
-class="btn primary"
-href="https://forms.gle/378WKzkQqqkqBRjt5"
-target="_blank"
-rel="noopener noreferrer">
-＋ পত্রিকা যোগ করুন
-</a>
-
+<p>তালিকায় কোনো পত্রিকা না থাকলে তথ্য পাঠাতে পারেন।</p>
+<a class="btn primary" href="https://forms.gle/378WKzkQqqkqBRjt5" target="_blank" rel="noopener noreferrer">＋ পত্রিকা যোগ করুন</a>
 </div>
 
 <div class="promo">
-
-<h2>
-বাংলাদেশের সংবাদপত্রের তথ্য এক জায়গায়
-</h2>
-
-<p>
-দৈনিক, সাপ্তাহিক, মাসিক, আঞ্চলিক, ইসলামিকসহ বিভিন্ন ধরনের প্রকাশনার তথ্য সহজে খুঁজে পাওয়ার জন্য এই ডিরেক্টরি তৈরি করা হয়েছে।
-</p>
-
+<h2>বাংলাদেশের সংবাদপত্রের তথ্য এক জায়গায়</h2>
+<p>দৈনিক, সাপ্তাহিক, মাসিক, আঞ্চলিক, ইসলামিকসহ বিভিন্ন ধরনের প্রকাশনার তথ্য সহজে খুঁজে পাওয়ার জন্য এই ডিরেক্টরি তৈরি করা হয়েছে।</p>
 </div>
 
 <footer class="footer">
-
 <div class="footerGrid">
-
 <div>
-
 <h3>পত্রিকা সমাহার</h3>
-
-<p>
-দেশের সংবাদপত্র ও সাময়িকীর তথ্যভিত্তিক ডিরেক্টরি।
-</p>
-
+<p>দেশের সংবাদপত্র ও সাময়িকীর তথ্যভিত্তিক ডিরেক্টরি।</p>
 </div>
-
 <div>
-
 <h3>ক্যাটাগরি</h3>
-
 <div id="footerCategories"></div>
-
 </div>
-
 <div>
-
 <h3>দ্রুত লিংক</h3>
-
-<a
-href="#"
-onclick="goHome();return false">
-হোম
-</a>
-
-<a
-href="#"
-onclick="showAll();return false">
-সব পত্রিকা
-</a>
-
-<a
-href="#"
-onclick="focusSearch();return false">
-অনুসন্ধান
-</a>
-
+<a href="#" onclick="goHome();return false">হোম</a>
+<a href="#" onclick="showAll();return false">সব পত্রিকা</a>
+<a href="#" onclick="focusSearch();return false">অনুসন্ধান</a>
 </div>
-
 <div>
-
 <h3>অন্যান্য</h3>
-
-<a
-href="https://forms.gle/378WKzkQqqkqBRjt5"
-target="_blank"
-rel="noopener noreferrer">
-পত্রিকা যোগ করুন
-</a>
-
-<a
-href="#"
-onclick="showAbout();return false">
-ডিরেক্টরি সম্পর্কে
-</a>
-
+<a href="https://forms.gle/378WKzkQqqkqBRjt5" target="_blank" rel="noopener noreferrer">পত্রিকা যোগ করুন</a>
+<a href="#" onclick="showAbout();return false">ডিরেক্টরি সম্পর্কে</a>
 </div>
-
 </div>
-
-<p style="margin-top:24px">
-© <span id="year"></span> পত্রিকা সমাহার
-</p>
-
+<p style="margin-top:24px">© <span id="year"></span> পত্রিকা সমাহার</p>
 </footer>
 
 </section>
 
-<section
-id="allView"
-style="display:none">
-
+<!-- SEARCH RESULT VIEW -->
+<section id="searchView" class="section" style="display:none">
 <div class="sectionHead">
+<h2>অনুসন্ধানের ফলাফল</h2>
+<button class="btn secondary" onclick="goHome()">ফিরে যান</button>
+</div>
+<div id="searchGrid" class="grid" style="margin-top:14px"></div>
+</section>
 
+<!-- ALL VIEW WITH FULL FILTER & SEARCH -->
+<section id="allView" style="display:none">
+<div class="sectionHead">
 <h2>সব পত্রিকা</h2>
-
-<button
-class="btn secondary"
-onclick="goHome()">
-হোম
-</button>
-
+<button class="btn secondary" onclick="goHome()">হোম</button>
 </div>
 
-<div
-class="heroSearchBox"
-style="background:var(--card);border:1px solid var(--line);margin-bottom:16px">
-
-<div
-class="heroSearchInputGroup"
-style="border:1px solid var(--line)">
-
-<input
-id="allViewSearchInput"
-type="search"
-placeholder="পত্রিকার নাম, জেলা, বিভাগ বা ট্যাগ লিখুন...">
-
+<div class="heroSearchBox" style="background:var(--card); border:1px solid var(--line); margin-bottom:16px;">
+  <div class="heroSearchInputGroup" style="border:1px solid var(--line);">
+    <input id="allViewSearchInput" type="search" placeholder="পত্রিকার নাম, জেলা, বিভাগ বা ট্যাগ লিখুন...">
+  </div>
+  <div class="heroFilterGrid">
+    <select id="fFrequency2">
+      <option value="">সব প্রকাশনা</option>
+    </select>
+    <select id="fCategory2">
+      <option value="">সব ক্যাটাগরি</option>
+    </select>
+    <select id="fDivision2">
+      <option value="">সব বিভাগ</option>
+    </select>
+    <button class="heroSearchBtn" onclick="runAllViewSearch()">খুঁজুন</button>
+  </div>
 </div>
 
-<div class="heroFilterGrid">
-
-<select id="fFrequency2">
-<option value="">সব প্রকাশনা</option>
-</select>
-
-<select id="fCategory2">
-<option value="">সব ক্যাটাগরি</option>
-</select>
-
-<select id="fDivision2">
-<option value="">সব বিভাগ</option>
-</select>
-
-<button
-type="button"
-class="heroSearchBtn"
-onclick="runAllViewSearch()">
-খুঁজুন
-</button>
-
-</div>
-
-</div>
-
-<div
-id="allGrid2"
-class="grid"
-style="margin-top:14px">
-</div>
-
-<div
-id="allPagination2"
-class="pagination">
-</div>
-
+<div id="allGrid2" class="grid" style="margin-top:14px"></div>
+<div id="allPagination2" class="pagination"></div>
 </section>
 
-<section
-id="aboutView"
-style="display:none">
-
+<!-- ABOUT VIEW -->
+<section id="aboutView" style="display:none">
 <div class="cta">
-
 <h2>ডিরেক্টরি সম্পর্কে</h2>
-
-<p>
-বাংলাদেশের বিভিন্ন সংবাদপত্র ও সাময়িকীর তথ্য এক জায়গায় উপস্থাপনের জন্য এই ডিরেক্টরি তৈরি করা হয়েছে।
-</p>
-
-<button
-class="btn primary"
-onclick="goHome()">
-হোমে ফিরে যান
-</button>
-
+<p>বাংলাদেশের বিভিন্ন সংবাদপত্র ও সাময়িকীর তথ্য এক জায়গায় উপস্থাপনের জন্য এই ডিরেক্টরি তৈরি করা হয়েছে।</p>
+<button class="btn primary" onclick="goHome()">হোমে ফিরে যান</button>
 </div>
-
 <div class="supportCard">
-
 <h2>আমাদের কাজ চলমান</h2>
-
-<p>
-বাংলাদেশের সংবাদপত্র ও সাময়িকীর তথ্য সংগ্রহ, যাচাই ও নিয়মিত হালনাগাদের এই উদ্যোগটি চলমান। আপনার পরামর্শ, তথ্য ও সহযোগিতা আমাদের এই কাজকে আরও সমৃদ্ধ করতে উৎসাহিত করবে।
-</p>
-
-<a
-class="btn primary"
-href="https://forms.gle/378WKzkQqqkqBRjt5"
-target="_blank"
-rel="noopener noreferrer">
-সহযোগিতা / তথ্য পাঠান
-</a>
-
+<p>বাংলাদেশের সংবাদপত্র ও সাময়িকীর তথ্য সংগ্রহ, যাচাই ও নিয়মিত হালনাগাদের এই উদ্যোগটি চলমান। আপনার পরামর্শ, তথ্য ও সহযোগিতা আমাদের এই কাজকে আরও সমৃদ্ধ করতে উৎসাহিত করবে।</p>
+<a class="btn primary" href="https://forms.gle/378WKzkQqqkqBRjt5" target="_blank" rel="noopener noreferrer">সহযোগিতা / তথ্য পাঠান</a>
 </div>
-
 </section>
-
 </main>
 
+<!-- BOTTOM NAVIGATION -->
 <nav class="bottom">
-
-<button onclick="goHome()">
-<b>⌂</b>
-হোম
-</button>
-
-<button onclick="showAll()">
-<b>▦</b>
-সব
-</button>
-
-<button onclick="focusSearch()">
-<b>⌕</b>
-সার্চ
-</button>
-
-<button onclick="showAbout()">
-<b>ⓘ</b>
-সম্পর্কে
-</button>
-
+<button onclick="goHome()"><b>⌂</b>হোম</button>
+<button onclick="showAll()"><b>▦</b>সব</button>
+<button onclick="focusSearch()"><b>⌕</b>সার্চ</button>
+<button onclick="showAbout()"><b>ⓘ</b>সম্পর্কে</button>
 </nav>
 
-<div
-id="modal"
-class="modal"
-onclick="if(event.target===this)closeModal()">
-
+<!-- DETAIL MODAL -->
+<div id="modal" class="modal" onclick="if(event.target===this)closeModal()">
 <div class="modalBox">
-
 <div class="modalTop">
-
-<button
-class="close"
-onclick="closeModal()">
-×
-</button>
-
+<button class="close" onclick="closeModal()">×</button>
 </div>
-
 <div id="detail"></div>
-
+</div>
 </div>
 
-</div>
-
-<div
-id="externalModal"
-class="modal"
-onclick="if(event.target===this)closeExternalModal()">
-
+<!-- EXTERNAL WEBSITE CONFIRMATION -->
+<div id="externalModal" class="modal" onclick="if(event.target===this)closeExternalModal()">
 <div class="noticeModalBox">
-
-<h3 id="externalTitle">
-পত্রিকার ওয়েবসাইটে যাওয়া হচ্ছে
-</h3>
-
-<p id="externalMessage">
-আপনি এখন পত্রিকার নিজস্ব ওয়েবসাইটে যাচ্ছেন।
-</p>
-
-<div
-id="externalDomain"
-class="externalDomain">
-</div>
-
+<h3 id="externalTitle">পত্রিকার ওয়েবসাইটে যাওয়া হচ্ছে</h3>
+<p id="externalMessage">আপনি এখন পত্রিকার নিজস্ব ওয়েবসাইটে যাচ্ছেন।</p>
+<div id="externalDomain" class="externalDomain"></div>
 <div class="noticeActions">
-
-<button
-class="btn secondary"
-onclick="closeExternalModal()">
-বাতিল
-</button>
-
-<button
-id="externalGo"
-class="btn primary">
-এগিয়ে যান ↗
-</button>
-
+<button class="btn secondary" onclick="closeExternalModal()">বাতিল</button>
+<button id="externalGo" class="btn primary">এগিয়ে যান ↗</button>
 </div>
-
 </div>
-
 </div>
 
 <script>
+/* =========================================================
+   পত্রিকা সমাহার - Core Application JavaScript
+   ========================================================= */
 
-const APPS_SCRIPT_URL =
-"https://script.google.com/macros/s/AKfycbzEuKc60X6KDIC3dmjUmxA_0XNbivriwKbm3ZGCol9oi0EkfEpNuABibklarI8gLHfn/exec";
-
-const FORM_URL =
-"https://forms.gle/378WKzkQqqkqBRjt5";
-
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzEuKc60X6KDIC3dmjUmxA_0XNbivriwKbm3ZGCol9oi0EkfEpNuABibklarI8gLHfn/exec";
+const FORM_URL = "https://forms.gle/378WKzkQqqkqBRjt5";
 const PER_PAGE = 20;
 
 const COLUMNS = {
-id:"ID",
-regno:"RegNo",
-name:"Name",
-language:"Language",
-frequency:"Frequency",
-category:"Category",
-country:"Country",
-division:"Division",
-district:"District",
-upazila:"Upazila",
-logo:"LogoURL",
-description:"Description",
-website:"Website",
-tags:"Tags",
-pdf:"Pdf",
-status:"Status"
+id:"ID", regno:"RegNo", name:"Name", language:"Language", frequency:"Frequency",
+category:"Category", country:"Country", division:"Division", district:"District",
+upazila:"Upazila", logo:"LogoURL", description:"Description", website:"Website",
+tags:"Tags", pdf:"Pdf", status:"Status"
 };
 
 let allNewspapers = [];
 let currentPage = 1;
 let externalTarget = "";
 
-function $(id){
-return document.getElementById(id);
-}
+function $(id){ return document.getElementById(id); }
 
 function norm(value){
-return String(value ?? "")
-.trim()
-.toLowerCase()
-.replace(/\s+/g," ");
+return String(value ?? "").trim().toLowerCase().replace(/\s+/g," ");
 }
 
 function splitValues(value){
-return String(value ?? "")
-.split(/[,،|]/)
-.map(x=>x.trim())
-.filter(Boolean);
+return String(value ?? "").split(/[,،|]/).map(x => x.trim()).filter(Boolean);
 }
 
 function esc(value){
-
-return String(value ?? "")
-.replace(/[&<>"']/g,function(c){
-
-return {
-"&":"&amp;",
-"<":"&lt;",
-">":"&gt;",
-'"':"&quot;",
-"'":"&#39;"
-}[c];
-
+return String(value ?? "").replace(/[&<>"']/g,function(c){
+return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];
 });
-
 }
 
 function attr(value){
-return String(value ?? "")
-.replace(/\\/g,"\\\\")
-.replace(/'/g,"\\'");
+return String(value ?? "").replace(/\\/g,"\\\\").replace(/'/g,"\\'");
 }
 
 function getField(item,key){
+if(!item || typeof item !== "object"){ return ""; }
 
-if(!item || typeof item !== "object"){
-return "";
-}
+const wanted = COLUMNS[key] || key;
 
-const wanted =
-COLUMNS[key] || key;
-
-if(
-item[wanted] !== undefined &&
-item[wanted] !== null
-){
+if(item[wanted] !== undefined && item[wanted] !== null){
 return String(item[wanted]).trim();
 }
 
-const target =
-norm(wanted);
+const target = norm(wanted);
 
-for(
-const k of Object.keys(item)
-){
-
+for(const k of Object.keys(item)){
 if(norm(k) === target){
-
-return item[k] == null
-?
-""
-:
-String(item[k]).trim();
-
+return item[k] == null ? "" : String(item[k]).trim();
 }
-
 }
 
 return "";
 }
 
 function safeUrl(value){
-
-let url =
-String(value ?? "")
-.trim()
-.replace(/^['"]|['"]$/g,"");
+let url = String(value ?? "").trim().replace(/^['"]|['"]$/g,"");
 
 if(!url){
 return "";
 }
 
 if(url.startsWith("//")){
-url =
-location.protocol + url;
+url = location.protocol + url;
 }
 
 try{
+const u = new URL(url,location.href);
 
-const u =
-new URL(url,location.href);
-
-if(
-u.protocol === "http:" ||
-u.protocol === "https:"
-){
-
+if(u.protocol === "http:" || u.protocol === "https:"){
 return u.href;
-
 }
 
 return "";
-
 }catch(e){
-
 return "";
-
 }
-
 }
 
 function imageUrl(value){
-
-let url =
-safeUrl(value);
+let url = safeUrl(value);
 
 if(!url){
 return "";
 }
 
 try{
+const u = new URL(url);
 
-const u =
-new URL(url);
-
-let match =
-u.pathname.match(
-/\/file\/d\/([^/]+)/
-);
+let match = u.pathname.match(/\/file\/d\/([^/]+)/);
 
 if(match){
-
-return
-"https://drive.google.com/uc?export=view&id="
-+
-encodeURIComponent(match[1]);
-
+return "https://drive.google.com/uc?export=view&id=" + encodeURIComponent(match[1]);
 }
 
-match =
-url.match(
-/[?&]id=([^&]+)/
-);
+match = url.match(/[?&]id=([^&]+)/);
 
-if(
-match &&
-/drive\.google\.com/i.test(
-u.hostname
-)
-){
-
-return
-"https://drive.google.com/uc?export=view&id="
-+
-encodeURIComponent(match[1]);
-
+if(match && /drive\.google\.com/i.test(u.hostname)){
+return "https://drive.google.com/uc?export=view&id=" + encodeURIComponent(match[1]);
 }
 
 return url;
 
 }catch(e){
-
 return url;
-
 }
-
 }
 
 function firstName(name){
-
-const text =
-String(name || "")
-.trim();
-
-return text
-?
-text.charAt(0)
-:
-"প";
-
+const text = String(name || "").trim();
+return text ? text.charAt(0) : "প";
 }
 
 function domainOf(url){
-
 try{
-
-return new URL(url)
-.hostname
-.replace(/^www\./i,"");
-
+return new URL(url).hostname.replace(/^www\./i,"");
 }catch(e){
-
 return url || "";
-
+}
 }
 
-}
-
-function setStatus(
-text,
-success=false
-){
-
-const el =
-$("noticeText");
+function setStatus(text, success=false){
+const el = $("noticeText");
 
 if(!el){
 return;
 }
 
-el.textContent =
-(success ? "● " : "") +
-text;
-
+el.textContent = (success ? "● " : "") + text;
 }
 
 function openDrawer(){
-
-$("drawer")
-.classList
-.add("open");
-
-document.body
-.classList
-.add("noScroll");
-
+$("drawer").classList.add("open");
+document.body.classList.add("noScroll");
 }
 
 function closeDrawer(){
-
-$("drawer")
-.classList
-.remove("open");
-
-document.body
-.classList
-.remove("noScroll");
-
+$("drawer").classList.remove("open");
+document.body.classList.remove("noScroll");
 }
 
 function toggleTheme(){
-
-document.body
-.classList
-.toggle("dark");
+document.body.classList.toggle("dark");
 
 localStorage.setItem(
 "newsTheme",
-document.body.classList.contains("dark")
-?
-"dark"
-:
-"light"
+document.body.classList.contains("dark") ? "dark" : "light"
 );
-
 }
 
-function cardHTML(
-item,
-index
-){
+function cardHTML(item,index){
 
-const name =
-getField(item,"name") ||
-"নাম নেই";
+const name = getField(item,"name") || "নাম নেই";
+const logo = imageUrl(getField(item,"logo"));
+const frequency = getField(item,"frequency");
+const category = getField(item,"category");
+const division = getField(item,"division");
+const description = getField(item,"description");
+const website = safeUrl(getField(item,"website"));
 
-const logo =
-imageUrl(
-getField(item,"logo")
-);
-
-const frequency =
-getField(item,"frequency");
-
-const category =
-getField(item,"category");
-
-const division =
-getField(item,"division");
-
-const description =
-getField(item,"description");
-
-const website =
-safeUrl(
-getField(item,"website")
-);
-
-const badges =
-[
+const badges = [
 frequency,
 category,
 division
-]
-.filter(Boolean);
+].filter(Boolean);
 
-const imageBlock =
-logo
-
-?
-
-`
-<img
-src="${esc(logo)}"
-alt="${esc(name)}"
-loading="lazy"
-referrerpolicy="no-referrer"
-onerror="
-this.style.display='none';
-this.nextElementSibling.style.display='grid';
-"
->
-
-<div
-class="placeholder"
-style="display:none">
-${esc(firstName(name))}
-</div>
-`
-
-:
-
-`
-<div class="placeholder">
-${esc(firstName(name))}
-</div>
-`;
+const imageBlock = logo 
+? `<img src="${esc(logo)}" alt="${esc(name)}" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='grid';"><div class="placeholder" style="display:none">${esc(firstName(name))}</div>`
+: `<div class="placeholder">${esc(firstName(name))}</div>`;
 
 return `
-
 <article class="card">
-
-<div class="logo">
-${imageBlock}
-</div>
-
+<div class="logo">${imageBlock}</div>
 <div class="cardBody">
-
-<h3>
-${esc(name)}
-</h3>
-
-<div class="meta">
-
-${badges.map(function(x){
-
-return `
-<span class="badge">
-${esc(x)}
-</span>
-`;
-
-}).join("")}
-
+<h3>${esc(name)}</h3>
+<div class="meta">${badges.map(function(x){
+return `<span class="badge">${esc(x)}</span>`;
+}).join("")}</div>
+${description ? `<p class="desc">${esc(description)}</p>` : ""}
+<button class="cardBtn" onclick="openDetails(${index})">বিস্তারিত দেখুন</button>
+${website ? `<button class="btn secondary cardBtn secondaryCard" onclick="openExternal('${attr(name)}','${attr(website)}')">পত্রিকাটি পড়ুন ↗</button>` : ""}
 </div>
-
-${
-description
-?
-`
-<p class="desc">
-${esc(description)}
-</p>
-`
-:
-""
-}
-
-<button
-class="cardBtn"
-onclick="openDetails(${index})">
-বিস্তারিত দেখুন
-</button>
-
-${
-website
-?
-`
-<button
-class="btn secondary cardBtn secondaryCard"
-onclick="openExternal(
-'${attr(name)}',
-'${attr(website)}'
-)">
-পত্রিকাটি পড়ুন ↗
-</button>
-`
-:
-""
-}
-
-</div>
-
 </article>
 `;
-
 }
 
-function renderGrid(
-id,
-items
-){
+function renderGrid(id,items){
 
-const el =
-$(id);
+const el = $(id);
 
 if(!el){
 return;
 }
 
-if(
-!items ||
-!items.length
-){
+if(!items || !items.length){
 
 el.innerHTML =
-`
-<div class="empty">
-কোনো পত্রিকার তথ্য পাওয়া যায়নি।
-</div>
-`;
+`<div class="empty">কোনো পত্রিকার তথ্য পাওয়া যায়নি।</div>`;
 
 return;
 }
 
-el.innerHTML =
-items.map(function(item){
-
+el.innerHTML = items.map(function(item){
 return cardHTML(
 item,
 allNewspapers.indexOf(item)
 );
-
 }).join("");
-
 }
 
-function valueMatches(
-item,
-key,
-value
-){
+function valueMatches(item,key,value){
 
 if(!value){
 return true;
 }
 
-if(key === "division"){
-
-return
-norm(getField(item,key))
-===
-norm(value);
-
+if(key === "division"){ 
+return norm(getField(item,key)) === norm(value); 
 }
 
 return splitValues(
 getField(item,key)
-)
-.some(function(v){
-
-return
-norm(v) === norm(value);
-
+).some(function(v){
+return norm(v) === norm(value);
 });
-
 }
 
-function matchesText(
-item,
-term
-){
+function matchesText(item,term){
 
-const t =
-norm(term);
+const t = norm(term);
 
 if(!t){
 return true;
 }
 
 const searchable = [
-
 "name",
 "language",
 "frequency",
@@ -2176,74 +1542,43 @@ const searchable = [
 "tags",
 "description",
 "regno"
-
 ];
 
-return searchable
-.map(function(key){
-
+return searchable.map(function(key){
 return getField(item,key);
-
-})
-.join(" ")
-.toLowerCase()
-.includes(t);
-
+}).join(" ").toLowerCase().includes(t);
 }
 
-/*
-=========================================================
-HOME SEARCH — FIXED
-=========================================================
-
-Important:
-The previous version hid #homeView while #searchView
-was inside #homeView. That caused the white/blank page.
-
-The home search now:
-1. Searches the complete Google Sheet dataset.
-2. Searches all important fields.
-3. Keeps the existing home structure visible.
-4. Shows matching newspaper templates in the existing
-   search-result section.
-=========================================================
-*/
+/* =========================================================
+   INTEGRATED SEARCH
+   ========================================================= */
 
 function runIntegratedSearch(){
 
-const input =
-$("heroSearch");
+const input = $("heroSearch");
 
 if(!input){
 return;
 }
 
-const term =
-input.value.trim();
+const term = input.value.trim();
 
-/*
-Only the visible homepage search box is used.
-The three old homepage dropdowns remain in the HTML
-so the original structure is preserved, but they are not
-used for homepage search.
-*/
+const freq = $("heroFrequency").value;
+const cat = $("heroCategory").value;
+const div = $("heroDivision").value;
 
-const results =
-allNewspapers.filter(function(item){
+const results = allNewspapers.filter(function(item){
 
-return matchesText(
-item,
-term
-);
+return matchesText(item, term) &&
+valueMatches(item, "frequency", freq) &&
+valueMatches(item, "category", cat) &&
+valueMatches(item, "division", div);
 
 });
 
 $("searchGrid").innerHTML =
-
 `
-<div
-style="grid-column:1/-1"
-class="inlineFolder">
+<div style="grid-column:1/-1" class="inlineFolder">
 
 <div class="inlineFolderHead">
 
@@ -2253,7 +1588,8 @@ class="inlineFolder">
 
 <button
 class="inlineFolderClose"
-onclick="closeHomeSearch()">
+onclick="goHome()"
+>
 বন্ধ করুন ✕
 </button>
 
@@ -2261,7 +1597,8 @@ onclick="closeHomeSearch()">
 
 <div
 id="heroSearchResultsGrid"
-class="grid">
+class="grid"
+>
 </div>
 
 </div>
@@ -2272,94 +1609,29 @@ renderGrid(
 results
 );
 
-$("homeView").style.display =
-"block";
-
-$("allView").style.display =
-"none";
-
-$("aboutView").style.display =
-"none";
-
-$("searchView").style.display =
-"block";
-
-/*
-Search result section-এর জায়গায় স্বাভাবিকভাবে নিয়ে যায়।
-Blank page বা hidden-parent সমস্যা হবে না।
-*/
-
-setTimeout(function(){
-
-const resultBox =
-$("searchView");
-
-if(resultBox){
-
-resultBox.scrollIntoView({
-behavior:"smooth",
-block:"start"
-});
-
-}
-
-},30);
-
-}
-
-function closeHomeSearch(){
-
-$("searchView").style.display =
-"none";
-
-if($("heroSearch")){
-
-$("heroSearch").value =
-"";
-
-}
-
+$("homeView").style.display = "none";
+$("allView").style.display = "none";
+$("aboutView").style.display = "none";
+$("searchView").style.display = "block";
 }
 
 function runAllViewSearch(){
 
-const term =
-$("allViewSearchInput").value;
+const term = $("allViewSearchInput").value;
+const freq = $("fFrequency2").value;
+const cat = $("fCategory2").value;
+const div = $("fDivision2").value;
 
-const freq =
-$("fFrequency2").value;
+const results = allNewspapers.filter(function(item){
 
-const cat =
-$("fCategory2").value;
-
-const div =
-$("fDivision2").value;
-
-const results =
-allNewspapers.filter(function(item){
-
-return
-matchesText(item,term) &&
-valueMatches(
-item,
-"frequency",
-freq
-) &&
-valueMatches(
-item,
-"category",
-cat
-) &&
-valueMatches(
-item,
-"division",
-div
-);
+return matchesText(item, term) &&
+valueMatches(item, "frequency", freq) &&
+valueMatches(item, "category", cat) &&
+valueMatches(item, "division", div);
 
 });
 
-window.currentAllViewResults =
-results;
+window.currentAllViewResults = results;
 
 renderPaged(
 "allGrid2",
@@ -2367,14 +1639,11 @@ renderPaged(
 results,
 1
 );
-
 }
 
-/*
-=========================================================
-INLINE FOLDER SYSTEM
-=========================================================
-*/
+/* =========================================================
+   INLINE FOLDER ACCORDION SYSTEM
+   ========================================================= */
 
 function toggleFolder(
 folderId,
@@ -2385,37 +1654,25 @@ filteredItems,
 triggerEl
 ){
 
-const folder =
-$(folderId);
+const folder = $(folderId);
 
 const isCurrentlyOpen =
 folder.style.display === "block" &&
 folder.dataset.activeVal === titleText;
 
-closeFolder(
-"frequencyFolder"
-);
-
-closeFolder(
-"categoryFolder"
-);
-
-closeFolder(
-"divisionFolder"
-);
+// Close all folders first
+closeFolder('frequencyFolder');
+closeFolder('categoryFolder');
+closeFolder('divisionFolder');
 
 if(isCurrentlyOpen){
-
 return;
-
 }
 
-folder.dataset.activeVal =
-titleText;
+folder.dataset.activeVal = titleText;
 
 $(titleId).textContent =
-titleText +
-" — " +
+titleText + " — " +
 filteredItems.length +
 "টি পত্রিকা";
 
@@ -2424,68 +1681,43 @@ gridId,
 filteredItems
 );
 
-folder.style.display =
-"block";
-
+folder.style.display = "block";
 }
 
-function closeFolder(
-folderId
-){
+function closeFolder(folderId){
 
-const folder =
-$(folderId);
+const folder = $(folderId);
 
 if(folder){
 
-folder.style.display =
-"none";
-
-folder.dataset.activeVal =
-"";
+folder.style.display = "none";
+folder.dataset.activeVal = "";
 
 }
-
 }
 
-function selectFrequencyChip(
-value
-){
+function selectFrequencyChip(value){
 
 const items =
 value
-
 ?
-
-allNewspapers.filter(
-function(item){
-
+allNewspapers.filter(function(item){
 return valueMatches(
 item,
 "frequency",
 value
 );
-
 })
-
 :
-
 allNewspapers;
 
 document
-.querySelectorAll(
-"#frequencyChips .chip"
-)
-.forEach(
-function(btn){
+.querySelectorAll("#frequencyChips .chip")
+.forEach(function(btn){
 
 btn.classList.toggle(
 "active",
-norm(
-btn.dataset.value
-)
-===
-norm(value)
+norm(btn.dataset.value) === norm(value)
 );
 
 });
@@ -2495,53 +1727,34 @@ toggleFolder(
 "frequencyFolderTitle",
 "frequencyGrid",
 value
-?
-value + " প্রকাশনা"
-:
-"সব প্রকাশনা",
+? value + " প্রকাশনা"
+: "সব প্রকাশনা",
 items
 );
-
 }
 
-function selectCategoryChip(
-value
-){
+function selectCategoryChip(value){
 
 const items =
 value
-
 ?
-
-allNewspapers.filter(
-function(item){
-
+allNewspapers.filter(function(item){
 return valueMatches(
 item,
 "category",
 value
 );
-
 })
-
 :
-
 allNewspapers;
 
 document
-.querySelectorAll(
-"#categoryChips .chip"
-)
-.forEach(
-function(btn){
+.querySelectorAll("#categoryChips .chip")
+.forEach(function(btn){
 
 btn.classList.toggle(
 "active",
-norm(
-btn.dataset.value
-)
-===
-norm(value)
+norm(btn.dataset.value) === norm(value)
 );
 
 });
@@ -2551,65 +1764,37 @@ toggleFolder(
 "categoryFolderTitle",
 "categoryGrid",
 value
-?
-value + " ক্যাটাগরি"
-:
-"সব ক্যাটাগরি",
+? value + " ক্যাটাগরি"
+: "সব ক্যাটাগরি",
 items
 );
-
 }
 
-function selectDivisionButton(
-value
-){
+function selectDivisionButton(value){
 
 const items =
 value
-
 ?
-
-allNewspapers.filter(
-function(item){
-
+allNewspapers.filter(function(item){
 return valueMatches(
 item,
 "division",
 value
 );
-
 })
-
 :
-
 allNewspapers;
 
 toggleFolder(
 "divisionFolder",
 "divisionFolderTitle",
 "divisionFolderGrid",
-value +
-" বিভাগের পত্রিকা",
+value + " বিভাগের পত্রিকা",
 items
 );
-
 }
 
-/*
-=========================================================
-PAGINATION — FIXED
-=========================================================
-
-প্রতি পাতায় ২০টি করে পত্রিকা থাকবে।
-
-Page button-এ ক্লিক করলে:
-- নতুন ২০টি card render হবে
-- page number active হবে
-- browser top-এ যাবে না
-- smooth/flying animation হবে না
-- বর্তমান scroll position ধরে রাখা হবে
-=========================================================
-*/
+/* Pagination handler */
 
 function renderPaged(
 gridId,
@@ -2621,10 +1806,7 @@ page
 const pages =
 Math.max(
 1,
-Math.ceil(
-items.length /
-PER_PAGE
-)
+Math.ceil(items.length / PER_PAGE)
 );
 
 currentPage =
@@ -2634,8 +1816,7 @@ pages
 );
 
 const start =
-(currentPage - 1) *
-PER_PAGE;
+(currentPage - 1) * PER_PAGE;
 
 renderGrid(
 gridId,
@@ -2645,59 +1826,34 @@ start + PER_PAGE
 )
 );
 
-const pagination =
-$(paginationId);
+const pagination = $(paginationId);
 
 if(!pagination){
 return;
 }
 
 if(pages <= 1){
-
-pagination.innerHTML =
-"";
-
+pagination.innerHTML = "";
 return;
-
 }
 
 let html = "";
 
-for(
-let i=1;
-i<=pages;
-i++
-){
+for(let i=1;i<=pages;i++){
 
 html +=
-
 `
 <button
-type="button"
-class="page ${
-i === currentPage
-?
-"active"
-:
-""
-}"
-onclick="
-goPage(
-'${gridId}',
-'${paginationId}',
-${i}
-);
-return false;
-">
+class="page ${i === currentPage ? "active" : ""}"
+onclick="goPage('${gridId}','${paginationId}',${i})"
+>
 ${i}
 </button>
 `;
 
 }
 
-pagination.innerHTML =
-html;
-
+pagination.innerHTML = html;
 }
 
 function goPage(
@@ -2707,27 +1863,14 @@ page
 ){
 
 const source =
-
 (
 gridId === "allGrid2" &&
 window.currentAllViewResults
 )
-
 ?
-
 window.currentAllViewResults
-
 :
-
 allNewspapers;
-
-/*
-Current screen position সংরক্ষণ।
-Card বদলানোর সময় page top-এ যাবে না।
-*/
-
-const beforeY =
-window.scrollY;
 
 renderPaged(
 gridId,
@@ -2736,70 +1879,34 @@ source,
 page
 );
 
-/*
-Browser rendering শেষ হওয়ার পরেও
-একবার position restore করা হচ্ছে।
-*/
-
-requestAnimationFrame(
-function(){
-
-window.scrollTo(
-0,
-beforeY
-);
-
-requestAnimationFrame(
-function(){
-
-window.scrollTo(
-0,
-beforeY
-);
-
-});
-
+const anchor = gridId === "allGrid" ? $("allSectionAnchor") : $(gridId);
+if(anchor){
+  anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
-);
-
 }
 
-function uniqueFieldValues(
-key
-){
+function uniqueFieldValues(key){
 
 return [
-
-...
-new Set(
-
-allNewspapers.flatMap(
-function(item){
+...new Set(
+allNewspapers.flatMap(function(item){
 
 return splitValues(
 getField(item,key)
 );
 
 })
-
 )
-
-]
-.filter(Boolean);
-
+].filter(Boolean);
 }
 
 function buildChips(){
 
 const freqs =
-uniqueFieldValues(
-"frequency"
-);
+uniqueFieldValues("frequency");
 
 const cats =
-uniqueFieldValues(
-"category"
-);
+uniqueFieldValues("category");
 
 $("frequencyChips").innerHTML =
 
@@ -2807,27 +1914,27 @@ $("frequencyChips").innerHTML =
 <button
 class="chip"
 data-value=""
-onclick="selectFrequencyChip('')">
+onclick="selectFrequencyChip('')"
+>
 সব
 </button>
 `
 
 +
 
-freqs.map(
-function(x){
+freqs.map(function(x){
 
 return `
 <button
 class="chip"
 data-value="${esc(x)}"
-onclick="selectFrequencyChip('${attr(x)}')">
+onclick="selectFrequencyChip('${attr(x)}')"
+>
 ${esc(x)}
 </button>
 `;
 
-}
-).join("");
+}).join("");
 
 $("categoryChips").innerHTML =
 
@@ -2835,27 +1942,27 @@ $("categoryChips").innerHTML =
 <button
 class="chip"
 data-value=""
-onclick="selectCategoryChip('')">
+onclick="selectCategoryChip('')"
+>
 সব
 </button>
 `
 
 +
 
-cats.map(
-function(x){
+cats.map(function(x){
 
 return `
 <button
 class="chip"
 data-value="${esc(x)}"
-onclick="selectCategoryChip('${attr(x)}')">
+onclick="selectCategoryChip('${attr(x)}')"
+>
 ${esc(x)}
 </button>
 `;
 
-}
-).join("");
+}).join("");
 
 function fillSelect(
 id,
@@ -2863,25 +1970,16 @@ first,
 values
 ){
 
-const el =
-$(id);
+const el = $(id);
 
 if(!el){
 return;
 }
 
 el.innerHTML =
+`<option value="">${first}</option>` +
 
-`
-<option value="">
-${first}
-</option>
-`
-
-+
-
-values.map(
-function(x){
+values.map(function(x){
 
 return `
 <option value="${esc(x)}">
@@ -2889,9 +1987,7 @@ ${esc(x)}
 </option>
 `;
 
-}
-).join("");
-
+}).join("");
 }
 
 fillSelect(
@@ -2919,127 +2015,71 @@ cats
 );
 
 $("footerCategories").innerHTML =
-
-cats
-.slice(0,15)
-.map(
-function(x){
+cats.slice(0,15).map(function(x){
 
 return `
 <a
 href="#"
-onclick="
-selectCategoryChip('${attr(x)}');
-goHome();
-return false;
-">
+onclick="selectCategoryChip('${attr(x)}');goHome();return false;"
+>
 ${esc(x)}
 </a>
 `;
 
-}
-)
-.join("");
-
+}).join("");
 }
 
 function buildDivisions(){
 
 const divisions =
-
 [
-...
-new Set(
-
-allNewspapers.map(
-function(item){
-
-return getField(
-item,
-"division"
-);
-
-}
+...new Set(
+allNewspapers.map(function(item){
+return getField(item,"division");
+})
 )
-
-)
-
-]
-.filter(Boolean);
+].filter(Boolean);
 
 $("divisionGrid").innerHTML =
-
-divisions
-.map(
-function(d){
+divisions.map(function(d){
 
 const count =
+allNewspapers.filter(function(item){
 
-allNewspapers.filter(
-function(item){
+return norm(
+getField(item,"division")
+) === norm(d);
 
-return
-norm(
-getField(
-item,
-"division"
-)
-)
-===
-norm(d);
-
-}
-).length;
+}).length;
 
 return `
 <button
 class="division"
-onclick="
-selectDivisionButton(
-'${attr(d)}'
-)">
+onclick="selectDivisionButton('${attr(d)}')"
+>
 ${esc(d)}
-<span>
-${count}টি পত্রিকা
-</span>
+<span>${count}টি পত্রিকা</span>
 </button>
 `;
 
-}
-)
-.join("")
+}).join("")
 
 ||
 
-`
-<div class="empty">
-বিভাগের তথ্য নেই।
-</div>
-`;
+`<div class="empty">বিভাগের তথ্য নেই।</div>`;
 
-function fillDivision(
-id
-){
+function fillDivision(id){
 
-const el =
-$(id);
+const el = $(id);
 
 if(!el){
 return;
 }
 
 el.innerHTML =
+`<option value="">সব বিভাগ</option>` +
 
-`
-<option value="">
-সব বিভাগ
-</option>
-`
-
-+
-
-divisions.map(
-function(x){
+divisions.map(function(x){
 
 return `
 <option value="${esc(x)}">
@@ -3047,36 +2087,22 @@ ${esc(x)}
 </option>
 `;
 
-}
-).join("");
-
+}).join("");
 }
 
-fillDivision(
-"heroDivision"
-);
-
-fillDivision(
-"fDivision2"
-);
-
+fillDivision("heroDivision");
+fillDivision("fDivision2");
 }
 
 function renderPopular(){
 
 renderGrid(
 "popularGrid",
-allNewspapers.slice(
-0,
-4
-)
+allNewspapers.slice(0,4)
 );
-
 }
 
-function openDetails(
-index
-){
+function openDetails(index){
 
 const item =
 allNewspapers[index];
@@ -3112,57 +2138,28 @@ const badges =
 getField(item,"frequency"),
 getField(item,"category"),
 getField(item,"division")
-]
-.filter(Boolean);
+].filter(Boolean);
 
 const infos =
 [
-[
-"প্রকাশনা",
-getField(item,"frequency")
-],
-[
-"ক্যাটাগরি",
-getField(item,"category")
-],
-[
-"ভাষা",
-getField(item,"language")
-],
-[
-"বিভাগ",
-getField(item,"division")
-],
-[
-"জেলা",
-getField(item,"district")
-],
-[
-"উপজেলা/থানা",
-getField(item,"upazila")
-],
-[
-"রেজিস্ট্রেশন",
-getField(item,"regno")
-],
-[
-"দেশ",
-getField(item,"country")
-]
-]
-.filter(
-function(x){
+["প্রকাশনা",getField(item,"frequency")],
+["ক্যাটাগরি",getField(item,"category")],
+["ভাষা",getField(item,"language")],
+["বিভাগ",getField(item,"division")],
+["জেলা",getField(item,"district")],
+["উপজেলা/থানা",getField(item,"upazila")],
+["রেজিস্ট্রেশন",getField(item,"regno")],
+["দেশ",getField(item,"country")]
+].filter(function(x){
 return x[1];
-}
-);
+});
 
 const tags =
 splitValues(
 getField(item,"tags")
 );
 
-const imageBlock =
-logo
+const imageBlock = logo 
 
 ?
 
@@ -3171,14 +2168,13 @@ logo
 src="${esc(logo)}"
 alt="${esc(name)}"
 referrerpolicy="no-referrer"
-onerror="
-this.style.display='none';
-this.nextElementSibling.style.display='grid';
-">
+onerror="this.style.display='none';this.nextElementSibling.style.display='grid';"
+>
 
 <div
 class="placeholder"
-style="display:none">
+style="display:none"
+>
 ${esc(firstName(name))}
 </div>
 `
@@ -3197,17 +2193,14 @@ $("detail").innerHTML =
 <div class="detailHead">
 
 <div class="detailLogo">
-
 ${imageBlock}
-
 </div>
 
 <div>
 
 <div class="meta">
 
-${badges.map(
-function(x){
+${badges.map(function(x){
 
 return `
 <span class="badge">
@@ -3215,8 +2208,7 @@ ${esc(x)}
 </span>
 `;
 
-}
-).join("")}
+}).join("")}
 
 </div>
 
@@ -3239,24 +2231,17 @@ description
 
 ?
 
-`
-<p class="detailDescription">
-${esc(description)}
-</p>
-`
+`<p class="detailDescription">${esc(description)}</p>`
 
 :
 
-`
-<p class="detailDescription">
-এই পত্রিকার সংক্ষিপ্ত বিবরণ বর্তমানে পাওয়া যায়নি।
-</p>
-`
+`<p class="detailDescription">এই পত্রিকার সংক্ষিপ্ত বিবরণ বর্তমানে পাওয়া যায়নি।</p>`
 }
 
 <div
 class="actions"
-style="margin-top:14px">
+style="margin-top:14px"
+>
 
 ${
 website
@@ -3266,11 +2251,8 @@ website
 `
 <button
 class="btn primary"
-onclick="
-openExternal(
-'${attr(name)}',
-'${attr(website)}'
-)">
+onclick="openExternal('${attr(name)}','${attr(website)}')"
+>
 পত্রিকা পড়ুন ↗
 </button>
 `
@@ -3290,7 +2272,8 @@ pdf
 class="btn secondary"
 href="${esc(pdf)}"
 target="_blank"
-rel="noopener noreferrer">
+rel="noopener noreferrer"
+>
 PDF দেখুন ↗
 </a>
 `
@@ -3302,11 +2285,8 @@ PDF দেখুন ↗
 
 <button
 class="btn secondary"
-onclick="
-shareItem(
-'${attr(name)}',
-'${attr(website)}'
-)">
+onclick="shareItem('${attr(name)}','${attr(website)}')"
+>
 শেয়ার করুন
 </button>
 
@@ -3326,7 +2306,8 @@ shareItem(
 class="btn secondary"
 href="${FORM_URL}"
 target="_blank"
-rel="noopener noreferrer">
+rel="noopener noreferrer"
+>
 তথ্য সংশোধনের জন্য জানান
 </a>
 
@@ -3340,23 +2321,16 @@ infos.length
 `
 <div class="infoGrid">
 
-${infos.map(
-function(x){
+${infos.map(function(x){
 
 return `
 <div class="info">
-
-<b>
-${esc(x[0])}
-</b>
-
+<b>${esc(x[0])}</b>
 ${esc(x[1])}
-
 </div>
 `;
 
-}
-).join("")}
+}).join("")}
 
 </div>
 `
@@ -3378,8 +2352,7 @@ tags.length
 
 <div class="detailTags">
 
-${tags.map(
-function(tag){
+${tags.map(function(tag){
 
 return `
 <span class="detailTag">
@@ -3387,8 +2360,7 @@ ${esc(tag)}
 </span>
 `;
 
-}
-).join("")}
+}).join("")}
 
 </div>
 `
@@ -3401,32 +2373,19 @@ ${esc(tag)}
 </div>
 `;
 
-$("modal")
-.classList
-.add("open");
+$("modal").classList.add("open");
 
-document.body
-.classList
-.add("noScroll");
-
+document.body.classList.add("noScroll");
 }
 
 function closeModal(){
 
-$("modal")
-.classList
-.remove("open");
+$("modal").classList.remove("open");
 
-document.body
-.classList
-.remove("noScroll");
-
+document.body.classList.remove("noScroll");
 }
 
-function openExternal(
-title,
-url
-){
+function openExternal(title,url){
 
 const target =
 safeUrl(url);
@@ -3438,18 +2397,13 @@ return;
 externalTarget =
 target;
 
-$("externalTitle")
-.textContent =
-
+$("externalTitle").textContent =
 `${title || "পত্রিকা"} — ওয়েবসাইটে যাওয়া হচ্ছে`;
 
-$("externalMessage")
-.textContent =
-
+$("externalMessage").textContent =
 "আপনি এখন প্রকাশনার নিজস্ব ওয়েবসাইটে যাচ্ছেন। পত্রিকা সমাহার শুধু তথ্যের ডিরেক্টরি; মূল কনটেন্টের মালিকানা সংশ্লিষ্ট প্রকাশনার।";
 
-$("externalDomain")
-.textContent =
+$("externalDomain").textContent =
 domainOf(target);
 
 $("externalGo").onclick =
@@ -3465,32 +2419,19 @@ closeExternalModal();
 
 };
 
-$("externalModal")
-.classList
-.add("open");
+$("externalModal").classList.add("open");
 
-document.body
-.classList
-.add("noScroll");
-
+document.body.classList.add("noScroll");
 }
 
 function closeExternalModal(){
 
-$("externalModal")
-.classList
-.remove("open");
+$("externalModal").classList.remove("open");
 
-document.body
-.classList
-.remove("noScroll");
-
+document.body.classList.remove("noScroll");
 }
 
-async function shareItem(
-name,
-url
-){
+async function shareItem(name,url){
 
 const shareUrl =
 safeUrl(url) ||
@@ -3506,7 +2447,6 @@ url:shareUrl
 });
 
 return;
-
 }
 
 if(navigator.clipboard){
@@ -3515,35 +2455,24 @@ await navigator.clipboard.writeText(
 shareUrl
 );
 
-alert(
-"লিংক কপি করা হয়েছে।"
-);
+alert("লিংক কপি করা হয়েছে।");
 
 return;
-
 }
 
 alert(shareUrl);
 
 }catch(e){}
-
 }
 
-function normalizeRows(
-data
-){
+function normalizeRows(data){
 
 if(Array.isArray(data)){
 return data;
 }
 
-if(
-data &&
-Array.isArray(data.data)
-){
-
+if(data && Array.isArray(data.data)){
 return data.data;
-
 }
 
 if(
@@ -3552,54 +2481,36 @@ Array.isArray(data.rows) &&
 Array.isArray(data.headers)
 ){
 
-return data.rows.map(
-function(row){
+return data.rows.map(function(row){
 
 const obj = {};
 
-data.headers.forEach(
-function(
-header,
-index
-){
+data.headers.forEach(function(header,index){
 
 obj[header] =
 row[index];
 
-}
-);
+});
 
 return obj;
-
-}
-);
+});
 
 }
 
 return [];
-
 }
 
 function loadJSONP(){
 
-return new Promise(
-function(
-resolve,
-reject
-){
+return new Promise(function(resolve,reject){
 
 const callbackName =
-
 "sheetCallback_" +
 Date.now() +
-Math.random()
-.toString(16)
-.slice(2);
+Math.random().toString(16).slice(2);
 
 const script =
-document.createElement(
-"script"
-);
+document.createElement("script");
 
 let done = false;
 
@@ -3609,19 +2520,14 @@ function(){
 
 finish(
 false,
-new Error(
-"JSONP timeout"
-)
+new Error("JSONP timeout")
 );
 
 },
 15000
 );
 
-function finish(
-ok,
-value
-){
+function finish(ok,value){
 
 if(done){
 return;
@@ -3632,22 +2538,15 @@ done = true;
 clearTimeout(timer);
 
 try{
-
-delete
-window[callbackName];
-
+delete window[callbackName];
 }catch(e){}
 
 script.remove();
 
 if(ok){
-
 resolve(value);
-
 }else{
-
 reject(value);
-
 }
 
 }
@@ -3667,15 +2566,12 @@ function(){
 
 finish(
 false,
-new Error(
-"JSONP error"
-)
+new Error("JSONP error")
 );
 
 };
 
 const separator =
-
 APPS_SCRIPT_URL.includes("?")
 ?
 "&"
@@ -3683,34 +2579,23 @@ APPS_SCRIPT_URL.includes("?")
 "?";
 
 script.src =
-
 APPS_SCRIPT_URL +
 separator +
 "prefix=" +
-encodeURIComponent(
-callbackName
-) +
+encodeURIComponent(callbackName) +
 "&callback=" +
-encodeURIComponent(
-callbackName
-);
+encodeURIComponent(callbackName);
 
-document.body.appendChild(
-script
-);
+document.body.appendChild(script);
 
 });
-
 }
 
 async function loadNewspapers(){
 
-setStatus(
-"তথ্য লোড হচ্ছে..."
-);
+setStatus("তথ্য লোড হচ্ছে...");
 
 let data = null;
-
 let lastError = null;
 
 try{
@@ -3728,12 +2613,10 @@ cache:"no-store"
 );
 
 if(!response.ok){
-
 throw new Error(
 "HTTP " +
 response.status
 );
-
 }
 
 data =
@@ -3742,24 +2625,16 @@ await response.json()
 );
 
 if(!data.length){
-
-throw new Error(
-"empty data"
-);
-
+throw new Error("empty data");
 }
 
 }catch(error){
 
-lastError =
-error;
+lastError = error;
 
 }
 
-if(
-!data ||
-!data.length
-){
+if(!data || !data.length){
 
 try{
 
@@ -3769,26 +2644,20 @@ await loadJSONP()
 );
 
 if(!data.length){
-
 throw new Error(
 "empty JSONP data"
 );
-
 }
 
 }catch(error){
 
-lastError =
-error;
+lastError = error;
 
 }
 
 }
 
-if(
-!data ||
-!data.length
-){
+if(!data || !data.length){
 
 allNewspapers = [];
 
@@ -3800,14 +2669,11 @@ setStatus(
 "allGrid",
 "popularGrid",
 "divisionGrid"
-]
-.forEach(
-function(id){
+].forEach(function(id){
 
 if($(id)){
 
 $(id).innerHTML =
-
 `
 <div class="empty">
 তথ্য লোড করা যাচ্ছে না।<br>
@@ -3825,23 +2691,18 @@ lastError
 );
 
 return;
-
 }
 
 allNewspapers =
-data.filter(
-function(item){
+data.filter(function(item){
 
 const status =
 norm(
-getField(
-item,
-"status"
-)
+getField(item,"status")
 );
 
-return
-!status ||
+return !status ||
+
 [
 "live",
 "active",
@@ -3850,11 +2711,9 @@ return
 "1",
 "সক্রিয়",
 "প্রকাশিত"
-]
-.includes(status);
+].includes(status);
 
-}
-);
+});
 
 buildChips();
 
@@ -3862,17 +2721,11 @@ buildDivisions();
 
 renderPopular();
 
-$("lastUpdated")
-.textContent =
-
+$("lastUpdated").textContent =
 "সর্বশেষ লোড: " +
-new Date()
-.toLocaleString(
-"bn-BD"
-);
+new Date().toLocaleString("bn-BD");
 
-currentPage =
-1;
+currentPage = 1;
 
 renderPaged(
 "allGrid",
@@ -3892,50 +2745,31 @@ setStatus(
 `${allNewspapers.length}টি পত্রিকার তথ্য লোড হয়েছে`,
 true
 );
-
 }
 
 function goHome(){
 
-$("homeView").style.display =
-"block";
-
-$("allView").style.display =
-"none";
-
-$("searchView").style.display =
-"none";
-
-$("aboutView").style.display =
-"none";
+$("homeView").style.display = "block";
+$("allView").style.display = "none";
+$("searchView").style.display = "none";
+$("aboutView").style.display = "none";
 
 if($("heroSearch")){
-
-$("heroSearch").value =
-"";
-
+$("heroSearch").value = "";
 }
 
 window.scrollTo({
 top:0,
 behavior:"smooth"
 });
-
 }
 
 function showAll(){
 
-$("homeView").style.display =
-"none";
-
-$("allView").style.display =
-"block";
-
-$("searchView").style.display =
-"none";
-
-$("aboutView").style.display =
-"none";
+$("homeView").style.display = "none";
+$("allView").style.display = "block";
+$("searchView").style.display = "none";
+$("aboutView").style.display = "none";
 
 renderPaged(
 "allGrid2",
@@ -3948,7 +2782,6 @@ window.scrollTo({
 top:0,
 behavior:"smooth"
 });
-
 }
 
 function focusSearch(){
@@ -3967,45 +2800,32 @@ if(input){
 
 setTimeout(
 function(){
-
 input.focus();
-
 },
 100
 );
 
 }
-
 }
 
 function showAbout(){
 
-$("homeView").style.display =
-"none";
-
-$("allView").style.display =
-"none";
-
-$("searchView").style.display =
-"none";
-
-$("aboutView").style.display =
-"block";
+$("homeView").style.display = "none";
+$("allView").style.display = "none";
+$("searchView").style.display = "none";
+$("aboutView").style.display = "block";
 
 window.scrollTo({
 top:0,
 behavior:"smooth"
 });
-
 }
 
 window.addEventListener(
 "keydown",
 function(event){
 
-if(
-event.key === "Escape"
-){
+if(event.key === "Escape"){
 
 closeModal();
 closeExternalModal();
@@ -4016,8 +2836,7 @@ closeDrawer();
 if(
 event.key === "Enter" &&
 document.activeElement &&
-document.activeElement.id ===
-"heroSearch"
+document.activeElement.id === "heroSearch"
 ){
 
 runIntegratedSearch();
@@ -4032,48 +2851,38 @@ window.addEventListener(
 function(){
 
 if(
-localStorage.getItem(
-"newsTheme"
-)
-===
-"dark"
+localStorage.getItem("newsTheme") === "dark"
 ){
 
-document.body
-.classList
-.add("dark");
+document.body.classList.add("dark");
 
 }
 
-$("year")
-.textContent =
-new Date()
-.getFullYear();
+$("year").textContent =
+new Date().getFullYear();
 
 loadNewspapers();
 
 }
 );
-
 </script>
 
+<!-- Google Translate Script -->
 <script type="text/javascript">
 
-function googleTranslateElementInit(){
+function googleTranslateElementInit() {
 
 new google.translate.TranslateElement({
 
-pageLanguage:"bn",
+pageLanguage: 'bn',
 
-includedLanguages:"bn,en,ar",
-
-autoDisplay:false,
+includedLanguages: 'bn,en,ar',
 
 layout:
 google.translate.TranslateElement.InlineLayout.SIMPLE
 
 },
-"google_translate_element"
+'google_translate_element'
 );
 
 }
@@ -4082,8 +2891,8 @@ google.translate.TranslateElement.InlineLayout.SIMPLE
 
 <script
 type="text/javascript"
-src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
-</script>
+src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+></script>
 
 </body>
 </html>
